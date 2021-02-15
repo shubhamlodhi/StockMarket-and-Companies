@@ -1,7 +1,46 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
+const mongoose = require('mongoose');
 
-app.get('/', (req, res) => res.send('Hello World!'))
+const indexRoute = require('./Routes/marketIndex.route');
+// const companyRoute = require('./Routes/companyData');
+//'mongodb+srv://tote:Yq1nrVODZdhIFJmg@cluster0.hhldg.mongodb.net/market_index?retryWrites=true&w=majority',
+// mongoose
+//   .connect(
+//     'mongodb+srv://tote:Yq1nrVODZdhIFJmg@cluster0.hhldg.mongodb.net/market_index?retryWrites=true&w=majority',
+//     {
+//       useNewUrlParser: true,
+//       useCreateIndex: true,
+//       useUnifiedTopology: true,
+//     }
+//   )
+//   .then(() => {
+//     console.log('Mongodb Connected .....');
+//   });
+require('./helpers/init_mongodb');
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.use('/marketIndex', indexRoute);
+// app.use('/companyData', companyRoute);
+
+//404 Error Route
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+//Error Handler
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.send({
+    error: {
+      status: err.status || 500,
+      message: err.message,
+    },
+  });
+});
+
+app.listen(port, () =>
+  console.log(`Example app listening at http://localhost:${port}`)
+);

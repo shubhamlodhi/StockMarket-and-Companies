@@ -1,0 +1,15 @@
+GET http://localhost:3000/
+
+### Create 
+POST http://localhost:3000/
+
+### Get by Id
+GET http://localhost:3000/id
+### Update by Id
+PATCH  http://localhost:3000/id
+
+### Delete by Id
+DELETE http://localhost:3000/id
+
+### hhh
+GET http://localhost:3000/marketIndex/bse
