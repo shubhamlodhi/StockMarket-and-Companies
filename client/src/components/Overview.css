@@ -1,0 +1,17 @@
+.overview {
+  /* background-color: blue; */
+  /* height: 100px; */
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+}
+
+.space {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: space-between;
+}

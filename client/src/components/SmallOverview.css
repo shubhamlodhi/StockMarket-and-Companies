@@ -1,0 +1,7 @@
+.smalloverview {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  /* background-color: greenyellow; */
+  justify-content: space-around;
+}

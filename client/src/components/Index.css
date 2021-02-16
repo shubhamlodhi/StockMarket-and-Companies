@@ -1,0 +1,38 @@
+.index {
+  /* height: 500px; */
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  /* background-color: yellow; */
+}
+
+.left {
+  width: 50%;
+  /* height: 200px; */
+  /* background-color: orange; */
+  padding: 15px;
+}
+
+.right {
+  width: 50%;
+  /* height: 200px; */
+  /* background-color: greenyellow; */
+  padding: 15px;
+}
+
+.slider {
+  /* background-color: black; */
+  width: 75%;
+  justify-content: space-between;
+}
+
+.form-range {
+  width: 85%;
+}
+
+.sliderRange {
+  /* background-color: white; */
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
