@@ -1,15 +1,44 @@
+### Home Page
 GET http://localhost:3000/
 
-### Create 
-POST http://localhost:3000/
+###---------------------------------------
+###  --> Register,Login 
+###---------------------------------------
 
-### Get by Id
-GET http://localhost:3000/id
-### Update by Id
-PATCH  http://localhost:3000/id
+### Register
+POST http://localhost:3000/auth/register
+Content-Type: application/json
 
-### Delete by Id
-DELETE http://localhost:3000/id
+{
+   "name" : "johndoe",
+   "email": "johndoe@test.com",
+   "password": "password"
+}
 
-### hhh
-GET http://localhost:3000/marketIndex/bse
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+   "email": "johndoe@test.com",
+   "password": "password"
+}
+
+###------------------------------------------------------
+### --> GET http://localhost:3000/index/<_Index_Name_> 
+###------------------------------------------------------
+
+### BSE Data
+GET http://localhost:3000/index/bse
+
+### NSE Data
+GET http://localhost:3000/index/nse
+
+### Companies Data : Ashok-Leyland 
+GET http://localhost:3000/index/ashokley  
+
+### Companies Data : Cipla
+GET http://localhost:3000/index/ashokley  
+
+
+
